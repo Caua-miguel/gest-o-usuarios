@@ -26,7 +26,9 @@ def form_cliente():
 
 @client_route.route('/<int:cliente_id>')
 def detalhe_cliente(cliente_id):
-    return render_template('detalhe_cliente.html')
+
+    cliente = list(filter(lambda c: c['id'] == cliente_id, CLIENTES))[0]
+    return render_template('detalhe_cliente.html', cliente=cliente)
 
 @client_route.route('/<int:cliente_id>/edit')
 def form_edit_cliente(cliente_id):
