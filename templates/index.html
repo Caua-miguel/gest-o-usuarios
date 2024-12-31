@@ -10,8 +10,13 @@
     <div class="container">
         <h1 class="text-center">Gestão de Clientes</h1>
 
-        <div c-container="{{ url_for('cliente.form_cliente') }}"></div>
+        <!-- Formulário add cliente -->
+        <div id="form-cliente" 
+            c-container="{{ url_for('cliente.form_cliente') }}"></div>
+
         <hr>
+        
+        <!-- Lista de clientes -->
         <h2>Lista de Clientes</h2>
         <div c-container="{{ url_for('cliente.lista_clientes') }}"></div>
     </div>
