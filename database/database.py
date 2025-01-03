@@ -1,3 +1,9 @@
-from peewee import SqliteDatabase
+import psycopg
+import os
+from dotenv import load_dotenv
 
-db = SqliteDatabase('customer_manager.db')
+load_dotenv()
+
+db = psycopg.connect(os.getenv('DATABASE_URI', ''))
+
+
